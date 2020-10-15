@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
-const accountSid = 'PN1764f40ba703e90a2ed7da6f2acb920d';
-const authToken = 'bac8e4289e30e69f7c78fd921ab31010';
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = 'PN1764f40ba703e90a2ed7da6f2acb920d';
+// const authToken = 'bac8e4289e30e69f7c78fd921ab31010';
+// const client = require('twilio')(accountSid, authToken);
 
 // client.messages
 //   .create({
