@@ -76,10 +76,12 @@ function table(){
     $.ajax({url: currentURL + "/api/tables", method: "GET"})
     .done(function(data) {
         for(var i=0; i<data.length;i++){
-            $('#tbl1Name').text(tables[i].name);
+            $('#tbl1Name').text(data[i].name);
         }
     })
 }
+
+table();
 </script>
 </body>
 </html>
