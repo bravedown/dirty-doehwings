@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
-// const accountSid = 'PN1764f40ba703e90a2ed7da6f2acb920d';
-// const authToken = 'bac8e4289e30e69f7c78fd921ab31010';
-// const client = require('twilio')(accountSid, authToken);
+const accountSid = 'ACPN1764f40ba703e90a2ed7da6f2acb920d';
+const authToken = 'bac8e4289e30e69f7c78fd921ab31010';
+const client = require('twilio')(accountSid, authToken);
 
 // client.messages
 //   .create({
@@ -54,6 +54,25 @@ app.post("/reservations", function(req, res) {
     }
 });
 
+app.post("/tables", function(req, res) {
+    // tables.splice(req.body, 1);
+    let newTable = {
+        "name": "David",
+        "phone": "2038928944",
+        "email": "email",
+        "nmbr": "1",
+        "id": "123"
+        };
+    // waitingList.splice(0, 1)[0];
+    client.messages
+        .create({
+            body: `${newTable.name}, your table is now reserved!`,
+            from: '+18606007589',
+            to: `+1${newTable.phone}`
+        })
+        .then(message => console.log(message.sid));
+    tables.push(newTable);
+});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
