@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl1">Table 1</div>
-                        <h6>Name:</h6>
+                        <h6 id="tbl1Name">Name:</h6>
                         <h6>Phone:</h6>
                         <h6>Email:</h6>
                         <h6>ID:</h6>
@@ -71,20 +71,15 @@
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-$("#reserveBtn").on("click", function(event) {
-      event.preventDefault();
-      var newRes = {
-        name: $("#resName").val().trim(),
-        phoneNumber : $("#resPhone").val().trim(),
-        email: $("#resEmail").val().trim(),
-        id: $("#resID").val().trim()
-      };
-      $.post("/reservations", newCharacter)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding character...");
-        });
-    });
+function table(){
+    var currentURL = window.location.origin;
+    $.ajax({url: currentURL + "/api/tables", method: "GET"})
+    .done(function(data) {
+        for(var i=0; i<data.length;i++){
+            $('#tbl1Name').text(tables[i].name);
+        }
+    })
+}
 </script>
 </body>
 </html>
