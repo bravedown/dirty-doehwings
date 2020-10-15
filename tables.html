@@ -16,10 +16,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl1">Table 1</div>
-                        <h6 id="tbl1Name">Name:</h6>
-                        <h6>Phone:</h6>
-                        <h6>Email:</h6>
-                        <h6>ID:</h6>
+                        <h6>Name:<span id="tbl1Name"></span></h6>
+                        <h6>Phone:<span id="tbl1Phone"></span></h6>
+                        <h6>Email:<span id="tbl1Email"></span></h6>
+                        <h6>ID:<span id="tbl1ID"></span></h6>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl2">Table 2</div>
-                        <h6>Name:</h6>
-                        <h6>Phone:</h6>
-                        <h6>Email:</h6>
-                        <h6>ID:</h6>
+                        <h6>Name:<span id="tbl2Name"></span></h6>
+                        <h6>Phone:<span id="tbl2Phone"></span></h6>
+                        <h6>Email:<span id="tbl2Email"></span></h6>
+                        <h6>ID:<span id="tbl2ID"></span></h6>
                     </div>
                 </div>
             </div>
@@ -38,10 +38,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl3">Table 3</div>
-                        <h6>Name:</h6>
-                        <h6>Phone:</h6>
-                        <h6>Email:</h6>
-                        <h6>ID:</h6>
+                        <h6>Name:<span id="tbl3Name"></span></h6>
+                        <h6>Phone:<span id="tbl3Phone"></span></h6>
+                        <h6>Email:<span id="tbl3Email"></span></h6>
+                        <h6>ID:<span id="tbl3ID"></span></h6>
                     </div>
                 </div>
             </div>
@@ -49,10 +49,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl4">Table 4</div>
-                        <h6>Name:</h6>
-                        <h6>Phone:</h6>
-                        <h6>Email:</h6>
-                        <h6>ID:</h6>
+                        <h6>Name:<span id="tbl4Name"></span></h6>
+                        <h6>Phone:<span id="tbl4Phone"></span></h6>
+                        <h6>Email:<span id="tbl4Email"></span></h6>
+                        <h6>ID:<span id="tbl4ID"></span></h6>
                     </div>
                 </div>
             </div>
@@ -60,10 +60,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header tbl5">Table 5</div>
-                        <h6>Name:</h6>
-                        <h6>Phone:</h6>
-                        <h6>Email:</h6>
-                        <h6>ID:</h6>
+                        <h6>Name:<span id="tbl5Name"></span></h6>
+                        <h6>Phone:<span id="tbl5Phone"></span></h6>
+                        <h6>Email:<span id="tbl5Email"></span></h6>
+                        <h6>ID:<span id="tbl5ID"></span></h6>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,11 @@ function table(){
     $.ajax({url: currentURL + "/api/tables", method: "GET"})
     .done(function(data) {
         for(var i=0; i<data.length;i++){
-            $('#tbl1Name').text(data[i].name);
+
+            $('#tbl'+i+'Name').text(data[i].name);
+            $('#tbl'+i+'Phone').text(data[i].name);
+            $('#tbl'+i+'Email').text(data[i].name);
+            $('#tbl'+i+'ID').text(data[i].name);
         }
     })
 }
