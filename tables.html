@@ -76,6 +76,7 @@ function table(){
     $.ajax({url: currentURL + "/api/tables", method: "GET"})
     .done(function(data) {
         for(var i=0; i<data.length;i++){
+
             $('#tbl'+i+'Name').text(data[i].name);
             $('#tbl'+i+'Phone').text(data[i].name);
             $('#tbl'+i+'Email').text(data[i].name);
@@ -83,6 +84,7 @@ function table(){
         }
     })
 }
+
 table();
 </script>
 </body>
